@@ -2,6 +2,8 @@ FROM php:fpm-alpine
 
 LABEL maintainer="Vincent Composieux <vincent.composieux@gmail.com>"
 
+RUN docker-php-ext-install mbstring tokenizer pdo pdo_mysql
+
 RUN apk add --update \
     php7-fpm \
     php7-apcu \
