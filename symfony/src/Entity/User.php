@@ -4,9 +4,18 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\UserSpecial;
+
 
 /**
- * @ApiResource
+ * @ApiResource(itemOperations={
+ *     "get",
+ *     "special"={
+ *         "method"="GET",
+ *         "path"="/user/{id}/special",
+ *         "controller"=UserSpecial::class
+ *     }
+ * })
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User

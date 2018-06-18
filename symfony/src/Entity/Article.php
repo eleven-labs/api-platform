@@ -6,7 +6,11 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get", "post"},
+ *     itemOperations={"get"},
+ *          attributes={"order"={"title"}}
+ *     )
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
 class Article
