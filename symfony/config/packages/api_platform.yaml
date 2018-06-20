@@ -74,7 +74,7 @@ api_platform:
         scopes: []
 
     graphql:
-        enabled: false
+        enabled: true
         graphiql:
             enabled: true
 

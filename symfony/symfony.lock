@@ -34,5 +34,8 @@
     },
     "symfony/templating": {
         "version": "v4.1.0"
+    },
+    "webonyx/graphql-php": {
+        "version": "v0.12.0"
     }
 }

@@ -10,14 +10,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use App\Validator\Minimal;
 
 /**
- * @ApiResource(
- *     collectionOperations={
- *          "get"={"normalization_context"={"groups"={"list"}}},
- *          "post"
- *      },
- *     itemOperations={"get"={"normalization_context"={"groups"={"get"}}}},
- *          attributes={"order"={"title"}}
- *     )
+ * @ApiResource
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
 class Article
@@ -31,15 +24,11 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @ApiFilter(SearchFilter::class, strategy="exact")
-     * @Groups({"get", "list"})
-     * @Minimal
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=2048)
-     * @Groups({"get"})
      */
     private $content;
 
