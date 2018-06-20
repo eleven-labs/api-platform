@@ -159,6 +159,7 @@ api_platform:
     exception_to_status:
         # With a status code.
         Symfony\Component\Serializer\Exception\ExceptionInterface: 400
+        App\Exception\ArticleNotFoundException: 404
 
     # The list of enabled formats. The first one will be the default.
     formats:
