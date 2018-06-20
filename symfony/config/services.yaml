@@ -36,3 +36,8 @@ services:
     App\Serializer\ApiNormalizer:
         decorates: 'api_platform.jsonld.normalizer.item'
         arguments: [ '@App\Serializer\ApiNormalizer.inner' ]
+
+    App\Doctrine\ArticleExtension:
+        tags:
+            - { name: api_platform.doctrine.orm.query_extension.collection, priority: 9 }
+            - { name: api_platform.doctrine.orm.query_extension.item }
