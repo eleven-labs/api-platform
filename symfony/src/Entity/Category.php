@@ -7,6 +7,8 @@ use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Filter\RegexFilter;
+use ApiPlatform\Core\Annotation\ApiFilter;
 
 /**
  * @ApiResource(itemOperations={
@@ -26,6 +28,7 @@ class Category
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ApiFilter(RegexFilter::class)
      */
     private $name;
 

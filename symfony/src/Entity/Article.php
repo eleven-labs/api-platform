@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * @ApiResource(
@@ -24,6 +26,7 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ApiFilter(SearchFilter::class, strategy="exact")
      */
     private $title;
 
