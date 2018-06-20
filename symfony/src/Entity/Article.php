@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Symfony\Component\Serializer\Annotation\Groups;
+use App\Validator\Minimal;
 
 /**
  * @ApiResource(
@@ -32,6 +33,7 @@ class Article
      * @ORM\Column(type="string", length=255)
      * @ApiFilter(SearchFilter::class, strategy="exact")
      * @Groups({"get", "list"})
+     * @Minimal
      */
     private $title;
 
