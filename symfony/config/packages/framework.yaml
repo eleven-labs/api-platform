@@ -9,6 +9,7 @@ framework:
     session:
         handler_id: ~
 
+    form: { enabled: true }
     #esi: true
     #fragments: true
     php_errors:
@@ -28,3 +29,13 @@ framework:
 
         # APCu (not recommended with heavy random-write workloads as memory fragmentation can cause perf issues)
         #app: cache.adapter.apcu
+    templating:
+        engines: ['twig']
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: App\Entity\User
+    from_email:
+        address: "jalouzot@gmail.com"
+        sender_name: "jalouzot@gmail.com"

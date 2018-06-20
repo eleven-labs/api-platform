@@ -6,12 +6,15 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.1",
+        "friendsofsymfony/user-bundle": "^2.1",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.1",
         "symfony/lts": "^4@dev",
         "symfony/maker-bundle": "^1.5",
         "symfony/orm-pack": "^1.0",
+        "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/twig-bundle": "^4.1",
         "symfony/yaml": "^4.1"
     },
     "require-dev": {

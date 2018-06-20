@@ -11,7 +11,11 @@ use App\Filter\RegexFilter;
 use ApiPlatform\Core\Annotation\ApiFilter;
 
 /**
- * @ApiResource(itemOperations={
+ * @ApiResource( collectionOperations={
+ *      "get",
+ *      "post"={"access_control"="is_granted('ROLE_BASTARD')"}
+ *  },
+ *  itemOperations={
  *     "get"={"method"="GET", "path"="/grimoire/{id}", "requirements"={"id"="\d+"}},
  *     "put"={"method"="PUT", "path"="/grimoire/{id}/update"},
  * })

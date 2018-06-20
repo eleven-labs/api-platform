@@ -31,7 +31,7 @@ api_platform:
         force_eager: true
 
     # Enable the FOSUserBundle integration.
-    enable_fos_user: false
+    enable_fos_user: true
 
     # Enable the Nelmio Api doc integration.
     enable_nelmio_api_doc: false
