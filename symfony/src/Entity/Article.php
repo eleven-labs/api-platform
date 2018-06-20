@@ -6,11 +6,15 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
- *     collectionOperations={"get", "post"},
- *     itemOperations={"get"},
+ *     collectionOperations={
+ *          "get"={"normalization_context"={"groups"={"list"}}},
+ *          "post"
+ *      },
+ *     itemOperations={"get"={"normalization_context"={"groups"={"get"}}}},
  *          attributes={"order"={"title"}}
  *     )
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -27,11 +31,13 @@ class Article
     /**
      * @ORM\Column(type="string", length=255)
      * @ApiFilter(SearchFilter::class, strategy="exact")
+     * @Groups({"get", "list"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=2048)
+     * @Groups({"get"})
      */
     private $content;
 
