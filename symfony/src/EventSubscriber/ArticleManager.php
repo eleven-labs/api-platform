@@ -15,7 +15,7 @@ final class ArticleManager implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::REQUEST => ['checkArticleAvailability', EventPriorities::POST_DESERIALIZE],
+      //      KernelEvents::REQUEST => ['checkArticleAvailability', EventPriorities::POST_DESERIALIZE],
         ];
     }
 
